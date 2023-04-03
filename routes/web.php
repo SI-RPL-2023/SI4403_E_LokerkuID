@@ -22,6 +22,10 @@ Route::get('/', function () {
     return view('user/home');
 });
 
+Route::get('company/companyregistration', function () {
+    return view('company/CompanyRegistration');
+});
+
 Route::prefix('admin')->middleware('auth','isAdmin')->group(function(){
     Route::get('/', [AdminController::class, 'AdminManagement'] );
 

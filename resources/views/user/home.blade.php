@@ -126,7 +126,7 @@
         <h3 class="fw-semibold text-center">You Have a Company?</h3>
         <div class="container w-50">
             <p style="text-align: center;">Hey!, you hava a company?. Try registering your company at LokerkuID, here you can expand your search for professional workers. join us and grow together!</p>
-            <a href="compregist">
+            <a href="company/companyregistration">
                 <center>
                     <button class="btn btn-primary mb-2">
                         Register

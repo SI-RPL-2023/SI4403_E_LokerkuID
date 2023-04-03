@@ -3,11 +3,15 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-6">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                {{-- <div class="card-header">{{ __('Register') }}</div> --}}
 
                 <div class="card-body">
+                    <center>
+                        <img style="height: 100px;" src="assets/Logo LokerkuID.png" alt="LokerkuID">
+                        <h4 class="mb-4">{{ __('Register') }}</h4>
+                    </center>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
@@ -58,6 +62,30 @@
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <input id="level" type="text" class="form-control @error('level') is-invalid @enderror" name="level" value="2" autocomplete="level" hidden>
+
+                                @error('level')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <textarea  type="textarea" class="form-control @error('desc') is-invalid @enderror" name="desc" autocomplete="desc" hidden>Normal User</textarea>
+
+                                @error('desc')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
 
