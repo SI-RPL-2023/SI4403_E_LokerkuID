@@ -1,54 +1,11 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>LokerkuID</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img style="width: 120px; margin-left:50px;" src="{{ asset('assets/Logo LokerkuID.png') }}" alt="" srcset=""></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="/">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="findjob">Find a Job</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="training">Training</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="article">Article</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about">About Us</a>
-              </li>
-            </ul>
-          </div>
-          <div style="width: 300px;" class="container text-end">
-              <ul class="navbar-nav ms-auto">
-            </ul>
-            </div>
-          </div>
-        </div>
-      </nav>
-
+@extends('user.navbarfooter')
+@section('body')
       <img style="width: 100%; filter: brightness(50%);" src="assets/meja.jpg" alt="">
       <div class="container">
         <h1 style="margin-top:-70px;" class="position-absolute top-50 start-50 translate-middle fw-bolder text-light">Find a job</h1>
         <h6 style="margin-top:-40px;" class="position-absolute top-50 start-50 translate-middle-x text-light">Find your dream job at LokerkuID</h6>
         <div class="container">
         <form action="/findjob" method="get">
-            @method('get')
             <div class="container">
               <input style="margin-top: 10px; width:30%; background-color:rgba(255, 255, 255, 0.553) !important; border:2px !important; border-style:solid !important; border-color:white !important;"
               name="search" type="text" class="form-control position-absolute top-50 start-50 translate-middle" placeholder="Find a job">
@@ -112,7 +69,6 @@
                     <button class="submit btn btn-primary">See More</button>
                 </a>
             </center>
-
             <div class="container-fluid">
                 <h3 class="mt-4 mb-3 text-center fw-semibold">Job Category</h3>
                 <div class="container text-center">
@@ -170,7 +126,7 @@
         <h3 class="fw-semibold text-center">You Have a Company?</h3>
         <div class="container w-50">
             <p style="text-align: center;">Hey!, you hava a company?. Try registering your company at LokerkuID, here you can expand your search for professional workers. join us and grow together!</p>
-            <a href="compregist">
+            <a href="company/companyregistration">
                 <center>
                     <button class="btn btn-primary mb-2">
                         Register
@@ -179,31 +135,4 @@
             </a>
         </div>
     </div>
-    <footer>
-        <div class="container-fluid-100" style="background-color: rgb(96, 96, 96);">
-          <div class="container text-center">
-            <div class="row">
-              <div class="col-md-6">
-                <h2 class="mt-5 text-white">
-                  Contact Us
-                </h2>
-                <p class="text-white">
-                  <img style="width: 20px; margin-right: 10px; align-items: flex-start;" src="assets/location-pin.png">
-                  Jl. Puri Kembangan 21, RT.6/RW.5, Kembangan Sel., Kec. Kembangan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11610
-                </p>
-                <p class="text-white">
-                  <img style="width: 20px; margin-right: 10px;" src="assets/phone-call.png" alt="">
-                  085156778777
-                </p>
-                <p class="text-white">
-                  <img style="width: 20px; margin-right: 10px;" src="assets/email.png" alt="">
-                  admin@lokerkuid.com
-                </p>
-              </div>
-              <div style="margin-left:150px;" class="col-8 col-md-4">
-                <img style="width: 300px; margin-top:60px;" src="{{ asset('assets/Logo LokerkuID putih.png') }}" alt="">
-                <h6 class="text-white">Copyright 2022</h6>
-              </div>
-      </footer>
-    </body>
-</html>
+    @endsection
