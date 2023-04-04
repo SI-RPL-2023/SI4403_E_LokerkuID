@@ -4,7 +4,9 @@
 <h1>LokerkuID </h1>
 </br>
 <br>
-![image](https://user-images.githubusercontent.com/114797825/229727387-c534fa60-cd3e-49f2-9411-9254a2b2f29b.png)
+<img src="https://user-images.githubusercontent.com/114797825/229727387-c534fa60-cd3e-49f2-9411-9254a2b2f29b.png" alt="Logo">
+
+
 </br>
 Repositori ini disusun sebagai berikut:
 
