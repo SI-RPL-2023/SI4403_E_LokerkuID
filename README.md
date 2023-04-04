@@ -3,7 +3,10 @@
 
 <h1>LokerkuID </h1>
 </br>
-(![image](https://user-images.githubusercontent.com/114797825/229726270-42a75ce8-e77c-4613-a9af-75371775c336.png)
+<br>
+![image](https://user-images.githubusercontent.com/114797825/229727387-c534fa60-cd3e-49f2-9411-9254a2b2f29b.png)
+</br>
+Repositori ini disusun sebagai berikut:
 
 Developed by : <br>
 
