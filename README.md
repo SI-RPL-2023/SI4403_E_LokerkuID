@@ -1,4 +1,4 @@
-## Hello, <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width=25> !
+## Hello Semua, <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width=25> Kami Dari Kelompok E Dari Kelas SI 44-03 !
 <br>
 
 <h1>LokerkuID </h1>
@@ -6,9 +6,12 @@
 <br>
 <img src="https://user-images.githubusercontent.com/114797825/229727387-c534fa60-cd3e-49f2-9411-9254a2b2f29b.png" alt="Logo">
 
-
 </br>
-Repositori ini disusun sebagai berikut:
+
+## About LokerkuID
+`LokerkuID` adalah sebuah website pencarian kerja yang dapat digunakan untuk mencari lowongan kerja yang sesuai dengan yang diinginkan. Website ini memiliki fitur `training` yang dapat anda gunakan untuk mengasah skill anda dalam suatu pekerjaan. Selain itu, website ini juga memiliki fitur `sertifikasi` yang dapat digunakan sebagai bukti bahwa anda benar-benar kompeten dalam pekerjaan yang akan anda lamar.
+Website `LokerkuID` dikembangkan menggunakan framework `Bootstrap` sebagai frontend dan `Laravel` sebagai backend.
+
 
 Developed by : <br>
 
@@ -20,12 +23,6 @@ Developed by : <br>
 | 4   | [Amara Prita Nadyatama]            | 1202200100 | Programmer      |
 | 5   | [Muhammad Rafie Wirandra]          | 1202204364 | Programmer      |
 | 6   | [Sulaiman Ilhan Mahendra]          | 1202204166 | Programmer      |
-
-
-## About LokerkuID
-`LokerkuID` adalah sebuah website pencarian kerja yang dapat digunakan untuk mencari lowongan kerja yang sesuai dengan yang diinginkan. Website ini memiliki fitur `training` yang dapat anda gunakan untuk mengasah skill anda dalam suatu pekerjaan. Selain itu, website ini juga memiliki fitur `sertifikasi` yang dapat digunakan sebagai bukti bahwa anda benar-benar kompeten dalam pekerjaan yang akan anda lamar.
-Website `LokerkuID` dikembangkan menggunakan framework `Bootstrap` sebagai frontend dan `Laravel` sebagai backend.
-
 
 ## Repository Structure
 
