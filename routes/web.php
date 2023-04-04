@@ -34,6 +34,15 @@ Route::prefix('admin')->middleware('auth','isAdmin')->group(function(){
 Route::prefix('company')->middleware('auth','isCom')->group(function(){
     Route::get('/', [CompanyController::class, 'CompanyManagement']);
 
+    Route::get('/recruitment', function() {
+        return view('company.CompanyRecruitment');
+    });
+    Route::get('/training', function() {
+        return view('company.CompanyTraining');
+    });
+    Route::get('/trainingmanagement', function() {
+        return view('company.CompanyTrainingManagement');
+    });
 });
 
 Auth::routes();
