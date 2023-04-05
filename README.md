@@ -1,84 +1,66 @@
-## Hello Semua<img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width=25>, Kami Dari Kelompok E Dari Kelas SI 44-03 !
-<br>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<h1>LokerkuID </h1>
-</br>
-<br>
-<img src="https://user-images.githubusercontent.com/114797825/229727387-c534fa60-cd3e-49f2-9411-9254a2b2f29b.png" alt="Logo">
+<p align="center">
+<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 
-</br>
+## About Laravel
 
-## About LokerkuID
-`LokerkuID` adalah sebuah website pencarian kerja yang dapat digunakan untuk mencari lowongan kerja yang sesuai dengan yang diinginkan. Website ini memiliki fitur `training` yang dapat anda gunakan untuk mengasah skill anda dalam suatu pekerjaan. Selain itu, website ini juga memiliki fitur `sertifikasi` yang dapat digunakan sebagai bukti bahwa anda benar-benar kompeten dalam pekerjaan yang akan anda lamar.
-Website `LokerkuID` dikembangkan menggunakan framework `Bootstrap` sebagai frontend dan `Laravel` sebagai backend.
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Developed by : <br>
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-| No  | Nama                               | NIM        | Role            |
-| --- | ---------------------------------- | ---------- | --------------- |
-| 1   | [Achmad Rozan Chaidir]             | 1202204268 | Project Manager |
-| 2   | [Muhammad Nizar Ali]               | 1202204213 | Bisnis Analyst  |
-| 3   | [Melati Puspa Vania Asyara]        | 1202204082 | Programmer      |
-| 4   | [Amara Prita Nadyatama]            | 1202200100 | Programmer      |
-| 5   | [Muhammad Rafie Wirandra]          | 1202204364 | Programmer      |
-| 6   | [Sulaiman Ilhan Mahendra]          | 1202204166 | Programmer      |
+## Learning Laravel
 
-## Repository Structure
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-Repository ini disusun sebagai berikut:
+You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
--   `main` adalah main branch repositori dan berisi kode versi stabil terbaru.
--   `Name` adalah Branch repositori yang digunakan untuk mengembangkan fitur baru yang dikerjakan oleh masing masing programmer dan digabungkan menjadi main saat sudah selesai.
+If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Cara Menjalankan Aplikasi
-*Salin perintah ini di terminal kamu atau git bash*
+## Laravel Sponsors
 
-- Clone project from github
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-```bash
-git clone https://github.com/SI-RPL-2023/SI4402_228_TITIPAN.git 
-```
+### Premium Partners
 
-- Copy the .env.example file to .env
+- **[Vehikl](https://vehikl.com/)**
+- **[Tighten Co.](https://tighten.co)**
+- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+- **[64 Robots](https://64robots.com)**
+- **[Cubet Techno Labs](https://cubettech.com)**
+- **[Cyber-Duck](https://cyber-duck.co.uk)**
+- **[Many](https://www.many.co.uk)**
+- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
+- **[DevSquad](https://devsquad.com)**
+- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
+- **[OP.GG](https://op.gg)**
+- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
+- **[Lendio](https://lendio.com)**
 
-```bash
-cp .env.example .env
-```
+## Contributing
 
-- Change the database name in the .env file
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-```bash
-DB_PORT=your_mysql_port
-DB_DATABASE=your_database_name
-```
+## Code of Conduct
 
-- Install Composer
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-```bash
-composer install
-```
+## Security Vulnerabilities
 
-- Generate Key
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-```bash
-php artisan key:generate
-```
+## License
 
-- Migrate Database
-
-```bash
-php artisan migrate
-```
-
-- Link Storage
-
-```bash
-php artisan storage:link
-```
-
-- Run the server
-
-```bash
-php artisan serve
-```
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
