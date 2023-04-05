@@ -1,11 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\CompanyController;
-use App\Http\Controllers\CompanyHomeController;
-use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,29 +8,23 @@ use App\Http\Controllers\UserController;
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
 |
 */
 
 Route::get('/', function () {
-    return view('user/home');
+    return view('index');
 });
-
-Route::get('company/companyregistration', function () {
-    return view('company/CompanyRegistration');
+Route::get('/findjob', function () {
+    return view('findjob');
 });
-
-Route::prefix('admin')->middleware('auth','isAdmin')->group(function(){
-    Route::get('/', [AdminController::class, 'AdminManagement'] );
-
+Route::get('/training', function () {
+    return view('training');
 });
-
-Route::prefix('company')->middleware('auth','isCom')->group(function(){
-    Route::get('/', [CompanyController::class, 'CompanyManagement']);
-
+Route::get('/article', function () {
+    return view('article');
 });
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/about', function () {
+    return view('about');
+});
