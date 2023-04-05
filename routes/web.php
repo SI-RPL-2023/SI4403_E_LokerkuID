@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\CompanyHomeController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+<<<<<<< HEAD
     return view('index');
 });
 Route::get('/findjob', function () {
@@ -27,4 +33,35 @@ Route::get('/article', function () {
 });
 Route::get('/about', function () {
     return view('about');
+=======
+    return view('user/home');
+>>>>>>> origin/Melati
 });
+
+Route::get('company/companyregistration', function () {
+    return view('company/CompanyRegistration');
+});
+
+Route::prefix('admin')->middleware('auth','isAdmin')->group(function(){
+    Route::get('/', [AdminController::class, 'AdminManagement'] );
+
+});
+
+Route::prefix('company')->middleware('auth','isCom')->group(function(){
+    Route::get('/', [CompanyController::class, 'CompanyManagement']);
+    Route::get('/recruitment', [CompanyController::class, 'CompanyRecruitment']);
+    Route::post('/storedata', [CompanyController::class, 'StoreData']);
+
+    Route::get('/training', function() {
+        return view('company.CompanyTraining');
+    });
+    Route::get('/trainingmanagement', function() {
+        return view('company.CompanyTrainingManagement');
+    });
+});
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/findjob', [UserController::class, 'findjob']);
+Route::get('/', [UserController::class, 'show']);
