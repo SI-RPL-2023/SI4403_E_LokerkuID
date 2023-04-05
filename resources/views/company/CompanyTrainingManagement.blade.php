@@ -10,14 +10,14 @@
     <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:15%">
         <img class="m-3" style="width: 180px;" src="{{ asset('assets/Logo LokerkuID.png') }}" alt="Logo LokerkuID" srcset="">
         <a href="home" class="w3-bar-item w3-button">Home</a>
-        <a href="company/recruitment" class="w3-bar-item w3-button">Recruitment</a>
-        <a href="company/reviewapplicants" class="w3-bar-item w3-button">Review Applicants</a>
-        <a href="company/training" class="w3-bar-item w3-button">Training</a>
-        <a href="company/trainingmanagement" class="w3-bar-item w3-button">Training Management</a>
-        <a href="company/history" class="w3-bar-item w3-button">History</a>
-        <a href="company/article" class="w3-bar-item w3-button">Write Article</a>
-        <a href="company/articlemanagement" class="w3-bar-item w3-button">Article Management</a>
-        <a href="company/profile" class="w3-bar-item w3-button">Profile</a>
+        <a href="recruitment" class="w3-bar-item w3-button">Recruitment</a>
+        <a href="reviewapplicants" class="w3-bar-item w3-button">Review Applicants</a>
+        <a href="training" class="w3-bar-item w3-button">Training</a>
+        <a href="trainingmanagement" class="w3-bar-item w3-button">Training Management</a>
+        <a href="history" class="w3-bar-item w3-button">History</a>
+        <a href="article" class="w3-bar-item w3-button">Write Article</a>
+        <a href="articlemanagement" class="w3-bar-item w3-button">Article Management</a>
+        <a href="profile" class="w3-bar-item w3-button">Profile</a>
         <div class="w3-dropdown-hover">
             <button class="w3-button">{{ Auth::user()->name }}</button>
             <div class="w3-dropdown-content w3-bar-block w3-border">
@@ -46,36 +46,34 @@
             <div class="container border border-2 rounded-4">
                 <table class="table">
                     <thead>
-                        <tr>
-                            <th scope="col">Job Position</th>
-                            <th scope="col">City</th>
-                            <th scope="col">Salary</th>
-                            <th scope="col">Type</th>
-                            <th scope="col">Experience</th>
-                            <th scope="col">Remote Working</th>
-                            <th scope="col">Description</th>
-                            <th scope="col">Action</th>
-                        </tr>
+                      <tr>
+                        <th scope="col">Training Name</th>
+                        <th scope="col">Link</th>
+                        <th scope="col">Descriptio</th>
+                        <th scope="col">Publish At</th>
+                        <th scope="col">Action</th>
+                      </tr>
                     </thead>
                     <tbody>
-                        @foreach ($data as $value)
-                        <tr>
-                            <td>{{ $value->jobname }}</td>
-                            <td>{{ $value->city}}</td>
-                            <td>{{ $value->salary }}</td>
-                            <td>{{ $value->type }}</td>
-                            <td>{{ $value->experience }}</td>
-                            <td>{{ $value->remoteworking }}</td>
-                            <td>{{ $value->desc }}</td>
-                            <td>
-                                <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                                    <button class="btn btn-success rounded-0" type="button">Close</button>
+
+                      <tr>
+                        <th scope="row">asd</th>
+                        <td>asd</td>
+                        <td>ads</td>
+                        <td>asd</td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                <a href="/company/trainingmanagement/asd/edit">
                                     <button type="button" class="btn btn-warning rounded-0">Update</button>
-                                    <button type="button" class="btn btn-danger rounded-0">Delete</button>
-                                </div>
-                            </td>
-                        </tr>
-                      @endforeach
+                                </a>
+                            <form action="/company/trainingmanagement/asd" method="POST">
+                                @csrf
+                                @method('delete')
+                                <input type="submit" name="submit" class="btn btn-danger rounded-0" value="Delete">
+                            </form>
+                            </div>
+                        </td>
+                      </tr>
 
                     </tbody>
                   </table>
