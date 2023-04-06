@@ -27,7 +27,7 @@
                 <h6>{{ $j->recruiter }}</h6>
                 <img style="height:20px; padding-right:10px;" src="assets/pin.png" alt="">{{ $j->city }}<br>
                 <img style="height:20px; padding-right:10px;" src="assets/dollar-symbol.png" alt="">Rp {{ $j->salary }}/month<br>
-                <a href="jobdetail" class="btn btn-primary mt-2">See detail</a>
+                <a href="jobdetail/{{ $j->id }}" class="btn btn-primary mt-2">See detail</a>
               </div>
             </div>
           </div>

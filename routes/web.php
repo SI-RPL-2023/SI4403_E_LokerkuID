@@ -44,8 +44,19 @@ Route::prefix('company')->middleware('auth','isCom')->group(function(){
     });
 });
 
+// Route::prefix('user')->middleware('auth','isUser')->group(function(){
+//     Route::get('jobdetail/applyjob/{id}', [UserController::class, 'applyjob']);
+
+// });
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/findjob', [UserController::class, 'findjob']);
 Route::get('/', [UserController::class, 'show']);
+Route::get('/jobdetail/{id}', [UserController::class, 'jobdetail']);
+
+Route::get('jobdetail/applyjob/{id}', [UserController::class, 'applyjob'])->middleware(['auth'])->name('user.UserApplicant');
+Route::post('jobdetail/applyjob/storedata', [UserController::class, 'StoreData']);
+// Route::post('jobdetail/applyjob/storedata', [ApplyJobController::class, 'storeData'])->name('applyjob.storedata');
+
