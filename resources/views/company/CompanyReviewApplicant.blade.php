@@ -11,7 +11,7 @@
         <img class="m-3" style="width: 180px;" src="{{ asset('assets/Logo LokerkuID.png') }}" alt="Logo LokerkuID" srcset="">
         <a href="home" class="w3-bar-item w3-button">Home</a>
         <a href="company/recruitment" class="w3-bar-item w3-button">Recruitment</a>
-        <a href="reviewapplicants" class="w3-bar-item w3-button">Review Applicants</a>
+        <a href="company/reviewapplicants" class="w3-bar-item w3-button">Review Applicants</a>
         <a href="company/training" class="w3-bar-item w3-button">Training</a>
         <a href="company/trainingmanagement" class="w3-bar-item w3-button">Training Management</a>
         <a href="company/history" class="w3-bar-item w3-button">History</a>
@@ -39,7 +39,7 @@
     <!-- Page Content -->
     <div style="margin-left:15%">
         <div class="w3-container w3-gray">
-            <h3 class="text-light m-3">Home | {{ Auth::user()->name }}</h3>
+            <h3 class="text-light m-3">Review Applicant | {{ Auth::user()->name }}</h3>
         </div>
         <div class="container-75 m-5">
             <h3 class="fw-semibold">Ongoing Recruitment</h3>
@@ -47,33 +47,19 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">Job Position</th>
-                            <th scope="col">City</th>
-                            <th scope="col">Salary</th>
-                            <th scope="col">Type</th>
-                            <th scope="col">Experience</th>
-                            <th scope="col">Remote Working</th>
-                            <th scope="col">Description</th>
-                            <th scope="col">Action</th>
+                            <th scope="col">Full Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Phone</th>
+                            <th scope="col">Address</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($data as $value)
                         <tr>
-                            <td>{{ $value->jobname }}</td>
-                            <td>{{ $value->city}}</td>
-                            <td>{{ $value->salary }}</td>
-                            <td>{{ $value->type }}</td>
-                            <td>{{ $value->experience }}</td>
-                            <td>{{ $value->remoteworking }}</td>
-                            <td>{{ $value->desc }}</td>
-                            <td>
-                                <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                                    <button class="btn btn-success rounded-0" type="button">Close</button>
-                                    <button type="button" class="btn btn-warning rounded-0">Update</button>
-                                    <button type="button" class="btn btn-danger rounded-0">Delete</button>
-                                </div>
-                            </td>
+                            <td>{{ $value->fullname }}</td>
+                            <td>{{ $value->email}}</td>
+                            <td>{{ $value->phone}}</td>
+                            <td>{{ $value->address}}</td>
                         </tr>
                       @endforeach
 
