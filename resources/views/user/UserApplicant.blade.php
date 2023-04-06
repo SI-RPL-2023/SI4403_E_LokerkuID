@@ -32,7 +32,8 @@
                         <textarea class="form-control" id="coverletter" name="coverletter" rows="3"></textarea>
                     </div>
                     <input type="text" class="form-control" id="jobID" name="jobID" value="{{ $data->id }}" hidden>
-                    <input type="text" class="form-control" id="jobID" name="status" value="waiting" hidden>
+                    <input type="text" class="form-control" id="recruiter" name="recruiter" value="{{ $data->recruiter }}" hidden>
+                    <input type="text" class="form-control" id="status" name="status" value="waiting" hidden>
                     <button type="submit" class="btn btn-primary mt-3 mb-3">Send</button>
                 </form>
             </div>
