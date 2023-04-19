@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ApplyJob;
 use App\Models\JobRecruitment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -23,5 +24,12 @@ class CompanyController extends Controller
     public function StoreData(Request $request){
         JobRecruitment::create($request->except(['_token','save']));
         return redirect('/company');
+    }
+    public function ReviewApplicants()
+    {
+        $data = ApplyJob::select('*')
+        ->where('recruiter','=',Auth::user()->name)->get();
+        // dd($data);
+        return view('company.CompanyReviewApplicant',compact(['data']));
     }
 }

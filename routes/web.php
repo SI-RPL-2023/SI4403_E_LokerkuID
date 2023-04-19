@@ -50,6 +50,7 @@ Route::prefix('admin')->middleware('auth','isAdmin')->group(function(){
 Route::prefix('company')->middleware('auth','isCom')->group(function(){
     Route::get('/', [CompanyController::class, 'CompanyManagement']);
     Route::get('/recruitment', [CompanyController::class, 'CompanyRecruitment']);
+    Route::get('/reviewapplicants', [CompanyController::class, 'ReviewApplicants']);
     Route::post('/storedata', [CompanyController::class, 'StoreData']);
 
     Route::get('/training', function() {

@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('applyjob', function (Blueprint $table) {
             $table->id();
             $table->integer('jobID');
+            $table->string('recruiter');
             $table->string('fullname');
             $table->string('email');
             $table->string('phone');

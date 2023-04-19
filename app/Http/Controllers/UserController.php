@@ -59,6 +59,7 @@ class UserController extends Controller
         $storedata->address = $request->address;
         $storedata->coverletter = $request->coverletter;
         $storedata->jobID = $request->jobID;
+        $storedata->recruiter = $request->recruiter;
         $storedata->status = $request->status;
 
         if ($request->hasFile('resume')) {
