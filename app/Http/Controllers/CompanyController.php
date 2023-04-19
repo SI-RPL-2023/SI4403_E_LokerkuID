@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ApplyJob;
+use App\Models\Article;
 use App\Models\JobRecruitment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -35,5 +36,11 @@ class CompanyController extends Controller
     public function WriteArticle()
     {
         return view('company.CompanyArticle');
+    }
+    public function PostArticle(Request $request)
+    {
+        $data = Article::create($request->except(['_token','save']));
+        // dd($data);
+        return redirect('company.CompanyArticle');
     }
 }

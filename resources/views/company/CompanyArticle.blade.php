@@ -49,7 +49,7 @@
 
     </div>
     <div class="container w-50">
-        <form action="article/store" method="post">
+        <form action="article/post" method="post">
             @csrf
             <div class="mb-3 mt-3">
                 <h5 class="text-start">Article Title</h5>
