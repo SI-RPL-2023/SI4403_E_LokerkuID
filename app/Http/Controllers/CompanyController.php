@@ -32,4 +32,8 @@ class CompanyController extends Controller
         // dd($data);
         return view('company.CompanyReviewApplicant',compact(['data']));
     }
+    public function WriteArticle()
+    {
+        return view('company.CompanyArticle');
+    }
 }
