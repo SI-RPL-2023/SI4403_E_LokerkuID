@@ -13,29 +13,13 @@ use App\Http\Controllers\UserController;
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
 |
 */
 
 Route::get('/', function () {
-<<<<<<< HEAD
-    return view('index');
-});
-Route::get('/findjob', function () {
-    return view('findjob');
-});
-Route::get('/training', function () {
-    return view('training');
-});
-Route::get('/article', function () {
-    return view('article');
-});
-Route::get('/about', function () {
-    return view('about');
-=======
     return view('user/home');
->>>>>>> origin/Melati
 });
 
 Route::get('company/companyregistration', function () {
@@ -52,6 +36,8 @@ Route::prefix('company')->middleware('auth','isCom')->group(function(){
     Route::get('/recruitment', [CompanyController::class, 'CompanyRecruitment']);
     Route::get('/reviewapplicants', [CompanyController::class, 'ReviewApplicants']);
     Route::post('/storedata', [CompanyController::class, 'StoreData']);
+    Route::get('/article', [CompanyController::class, 'WriteArticle']);
+    Route::post('article/post', [CompanyController::class, 'PostArticle']);
 
     Route::get('/training', function() {
         return view('company.CompanyTraining');
