@@ -50,7 +50,7 @@ class CompanyController extends Controller
     }
     public function deletearticle($id)
     {
-        $data = Article::find($id);
+$data = Article::find($id);
         $data->delete();
         return redirect('company/articlemanagement');
     }
