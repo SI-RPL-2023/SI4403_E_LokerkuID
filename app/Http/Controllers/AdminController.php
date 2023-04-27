@@ -48,4 +48,10 @@ class AdminController extends Controller
         $data2 = Article::all();
         return view('admin.AdminArticleManagement',compact(['data','data2']));
     }
+    public function deletepost($id)
+    {
+        $data =Article::find($id);
+        $data->destroy($id);
+        return redirect('admin/articlemanagement');
+    }
 }
