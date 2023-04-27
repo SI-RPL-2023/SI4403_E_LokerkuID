@@ -9,7 +9,7 @@
 <!-- Sidebar -->
     <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:15%">
         <img class="m-3" style="width: 180px;" src="{{ asset('assets/Logo LokerkuID.png') }}" alt="Logo LokerkuID" srcset="">
-        <a href="/home" class="w3-bar-item w3-button">Home</a>
+        <a href="home" class="w3-bar-item w3-button">Home</a>
         <a href="recruitment" class="w3-bar-item w3-button">Recruitment</a>
         <a href="reviewapplicants" class="w3-bar-item w3-button">Review Applicants</a>
         <a href="training" class="w3-bar-item w3-button">Training</a>

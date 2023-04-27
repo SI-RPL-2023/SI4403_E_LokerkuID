@@ -32,7 +32,7 @@ Route::prefix('admin')->middleware('auth','isAdmin')->group(function(){
 });
 
 Route::prefix('company')->middleware('auth','isCom')->group(function(){
-    Route::get('/', [CompanyController::class, 'CompanyManagement']);
+    Route::get('/home', [CompanyController::class, 'CompanyManagement']);
     Route::get('/recruitment', [CompanyController::class, 'CompanyRecruitment']);
     Route::get('/reviewapplicants', [CompanyController::class, 'ReviewApplicants']);
     Route::post('/storedata', [CompanyController::class, 'StoreData']);
@@ -42,10 +42,9 @@ Route::prefix('company')->middleware('auth','isCom')->group(function(){
     Route::put('/{id}/update', [CompanyController::class,'update']);
     Route::put('/{id}', [CompanyController::class,'close']);
     Route::delete('/{id}', [CompanyController::class,'delete']);
+    Route::get('/training', [CompanyController::class, 'training']);
+    Route::post('/training/store', [CompanyController::class,'StoreTraining']);
 
-    Route::get('/training', function() {
-        return view('company.CompanyTraining');
-    });
     Route::get('/trainingmanagement', function() {
         return view('company.CompanyTrainingManagement');
     });
