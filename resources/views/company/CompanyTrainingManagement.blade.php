@@ -55,18 +55,18 @@
                       </tr>
                     </thead>
                     <tbody>
-
+                        @foreach ($data as $d)
                       <tr>
-                        <th scope="row">asd</th>
-                        <td>asd</td>
-                        <td>ads</td>
-                        <td>asd</td>
+                        <th scope="row">{{ $d->trainingname }}</th>
+                        <td>{{ $d->link }}</td>
+                        <td>{{ $d->description }}</td>
+                        <td>{{ $d->created_at }}</td>
                         <td>
                             <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                                <a href="/company/trainingmanagement/asd/edit">
+                                <a href="/company/trainingmanagement/{{ $d->id }}/edit">
                                     <button type="button" class="btn btn-warning rounded-0">Update</button>
                                 </a>
-                            <form action="/company/trainingmanagement/asd" method="POST">
+                            <form action="/company/trainingmanagement/{{ $d->id }}" method="POST">
                                 @csrf
                                 @method('delete')
                                 <input type="submit" name="submit" class="btn btn-danger rounded-0" value="Delete">
@@ -74,7 +74,7 @@
                             </div>
                         </td>
                       </tr>
-
+                      @endforeach
                     </tbody>
                   </table>
             </div>

@@ -44,10 +44,9 @@ Route::prefix('company')->middleware('auth','isCom')->group(function(){
     Route::delete('/{id}', [CompanyController::class,'delete']);
     Route::get('/training', [CompanyController::class, 'training']);
     Route::post('/training/store', [CompanyController::class,'StoreTraining']);
+    Route::get('/trainingmanagement', [CompanyController::class,'trainingmanagement']);
+    Route::delete('/trainingmanagement/{id}', [CompanyController::class,'deletetraining']);
 
-    Route::get('/trainingmanagement', function() {
-        return view('company.CompanyTrainingManagement');
-    });
 });
 
 // Route::prefix('user')->middleware('auth','isUser')->group(function(){

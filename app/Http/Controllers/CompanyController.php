@@ -77,4 +77,15 @@ class CompanyController extends Controller
         Training::create($request->except(['_token','save']));
         return redirect('company/trainingmanagement');
     }
+    public function trainingmanagement()
+    {
+        $data = Training::all()->where('trainer','=',Auth::user()->name);
+        return view('company.CompanyTrainingManagement',compact(['data']));
+    }
+    public function deletetraining($id)
+    {
+        $data = Training::find($id);
+        $data->delete();
+        return redirect('company/trainingmanagement');
+    }
 }
