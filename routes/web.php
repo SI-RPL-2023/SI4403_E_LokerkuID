@@ -60,6 +60,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/findjob', [UserController::class, 'findjob']);
 Route::get('/', [UserController::class, 'show']);
 Route::get('/jobdetail/{id}', [UserController::class, 'jobdetail']);
+Route::get('/training', [UserController::class, 'training']);
 
 Route::get('jobdetail/applyjob/{id}', [UserController::class, 'applyjob'])->middleware(['auth'])->name('user.UserApplicant');
 Route::post('jobdetail/applyjob/storedata', [UserController::class, 'StoreData']);
