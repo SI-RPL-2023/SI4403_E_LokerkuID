@@ -24,12 +24,18 @@
         <h6>From : {{ $d->trainer }}</h6>
         <p>{{ $d->description }}</p>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <a href="/detailtraining/{{ $d->id }}" class="btn btn-primary mt-2">See detail</a>
 =======
         <form action="/detailtraining/{{ $d->id }}" method="get">
             <button class="btn btn-primary" type="submit">See Detail</button>
         </form>
 >>>>>>> origin/Rafie
+=======
+        <form action="/detailtraining/{{ $d->id }}" method="get">
+            <button class="btn btn-primary" type="submit">See Detail</button>
+        </form>
+>>>>>>> origin/sule
     </div>
     </div>
 @endforeach

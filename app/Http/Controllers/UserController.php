@@ -78,6 +78,7 @@ class UserController extends Controller
         return view('user.UserTraining',compact(['data']));
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function detailtraining($id)
     {
         $data = Training::find($id);
@@ -85,4 +86,6 @@ class UserController extends Controller
     }
 =======
 >>>>>>> origin/Rafie
+=======
+>>>>>>> origin/sule
 }

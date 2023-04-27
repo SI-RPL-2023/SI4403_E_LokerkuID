@@ -51,6 +51,7 @@
                       </tr>
                     </thead>
                     <tbody>
+<<<<<<< HEAD
                     <tr>
                         <td>Achmad Rozan</td>
                         <td>achmadrozan123@gmail.com</td>
@@ -59,11 +60,28 @@
                         <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt, perspiciatis!</td>
                         <td>
                             <form action="" method="post">
+=======
+                    @foreach ($data as $d)
+                    <tr>
+                        <td>{{ $d->name }}</td>
+                        <td>{{ $d->email}}</td>
+                        <td>{{ $d->level }}</td>
+                        <td>{{ $d->created_at}}</td>
+                        <td>{{ $d->desc }}</td>
+                        <td>
+                            <form action="/admin/{{ $d->id }}" method="post">
+                                @csrf
+                                @method('delete')
+>>>>>>> origin/sule
                                 <input class="btn btn-danger" type="submit" value="Delete">
                             </form>
                         </td>
                     </tr>
+<<<<<<< HEAD
 
+=======
+                     @endforeach
+>>>>>>> origin/sule
                     </tbody>
                   </table>
             </div>
@@ -84,6 +102,7 @@
                       </tr>
                     </thead>
                     <tbody>
+<<<<<<< HEAD
 
                     <tr>
                         <td>LokerkuID</td>
@@ -93,11 +112,28 @@
                         <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint corrupti perferendis beatae! Consequuntur, recusandae officia.</td>
                         <td>
                             <form action="" method="post">
+=======
+                    @foreach ($com as $c)
+                    <tr>
+                        <td>{{ $c->name }}</td>
+                        <td>{{ $c->email}}</td>
+                        <td>{{ $c->level }}</td>
+                        <td>{{ $c->created_at}}</td>
+                        <td>{{ $c->desc }}</td>
+                        <td>
+                            <form action="admin/{{ $c->id }}" method="post">
+                                @csrf
+                                @method('delete')
+>>>>>>> origin/sule
                                 <input class="btn btn-danger" type="submit" value="Delete">
                             </form>
                         </td>
                     </tr>
+<<<<<<< HEAD
 
+=======
+                     @endforeach
+>>>>>>> origin/sule
                     </tbody>
                   </table>
             </div>
