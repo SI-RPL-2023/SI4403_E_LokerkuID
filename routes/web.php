@@ -31,6 +31,9 @@ Route::prefix('admin')->middleware('auth','isAdmin')->group(function(){
     Route::delete('/{id}', [AdminController::class,'delete']);
     Route::get('/jobmanagement', [AdminController::class, 'jobmanagement'] );
     Route::delete('jobmanagement/{id}', [AdminController::class,'deletejob']);
+    Route::get('/article', [AdminController::class, 'article'] );
+    Route::post('/store', [AdminController::class, 'store'] );
+    Route::get('/articlemanagement', [AdminController::class, 'articlemanagement']);
 
 });
 

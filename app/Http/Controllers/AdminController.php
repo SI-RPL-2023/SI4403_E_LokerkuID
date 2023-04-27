@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use App\Models\JobRecruitment;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -30,5 +32,20 @@ class AdminController extends Controller
         $data =Jobrecruitment::find($id);
         $data->delete();
         return redirect('admin/jobmanagement');
+    }
+    public function article()
+    {
+        return view('admin.AdminArticle');
+    }
+    public function store(Request $request)
+    {
+        Article::create($request->except(['_token','save']));
+        return redirect('admin/articlemanagement');
+    }
+    public function articlemanagement()
+    {
+        $data = Article::all()->where('publisher','=',Auth::user()->name);
+        $data2 = Article::all();
+        return view('admin.AdminArticleManagement',compact(['data','data2']));
     }
 }
