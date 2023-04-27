@@ -77,9 +77,12 @@ class UserController extends Controller
         $data = Training::where('trainingname','LIKE','%'.$request->search.'%')->get();
         return view('user.UserTraining',compact(['data']));
     }
+<<<<<<< HEAD
     public function detailtraining($id)
     {
         $data = Training::find($id);
         return view('user.UserDetailTraining', compact(['data']));
     }
+=======
+>>>>>>> origin/Rafie
 }

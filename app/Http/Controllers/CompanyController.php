@@ -42,6 +42,7 @@ class CompanyController extends Controller
     {
         $data = Article::create($request->except(['_token','save']));
         // dd($data);
+<<<<<<< HEAD
         return redirect('company/articlemanagement');
     }
     public function articlemanagement()
@@ -54,6 +55,9 @@ class CompanyController extends Controller
         $data = Article::find($id);
         $data->delete();
         return redirect('company/articlemanagement');
+=======
+        return redirect('company.CompanyArticle');
+>>>>>>> origin/Rafie
     }
     public function edit($id)
     {
