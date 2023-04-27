@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ApplyJob;
 use App\Models\Article;
 use App\Models\JobRecruitment;
+use App\Models\Training;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,7 +25,7 @@ class CompanyController extends Controller
 
     public function StoreData(Request $request){
         JobRecruitment::create($request->except(['_token','save']));
-        return redirect('/company');
+        return redirect('company/home');
     }
     public function ReviewApplicants()
     {
@@ -41,6 +42,61 @@ class CompanyController extends Controller
     {
         $data = Article::create($request->except(['_token','save']));
         // dd($data);
-        return redirect('company.CompanyArticle');
+        return redirect('company/articlemanagement');
+    }
+    public function articlemanagement()
+    {
+        $data = Article::all()->where('publisher','=',Auth::user()->name);
+        return view('company.CompanyArticleManagement',compact(['data']));
+    }
+    public function deletearticle($id)
+    {
+        $data = Article::find($id);
+        $data->delete();
+        return redirect('company/articlemanagement');
+    }
+    public function edit($id)
+    {
+        $data =Jobrecruitment::find($id);
+        return view('company.CompanyEditRecruitment',compact(['data']));
+        dd($data);
+    }
+    public function update($id, Request $request)
+    {
+        $data =Jobrecruitment::find($id);
+        $data->update($request->except(['_token','submit']));
+        return redirect('company/home');
+    }
+    public function close($id, Request $request)
+    {
+        $data =Jobrecruitment::find($id);
+        $data->update($request->except(['_token','_method','_method','jobname','city','salary','type','remoteworking','desc','submit']));
+        return redirect('company/home');
+    }
+    public function delete($id)
+    {
+        $data =Jobrecruitment::find($id);
+        $data->delete();
+        return redirect('company/home');
+    }
+    public function training()
+    {
+        return view('company.CompanyTraining');
+    }
+    public function StoreTraining(Request $request)
+    {
+        Training::create($request->except(['_token','save']));
+        return redirect('company/trainingmanagement');
+    }
+    public function trainingmanagement()
+    {
+        $data = Training::all()->where('trainer','=',Auth::user()->name);
+        return view('company.CompanyTrainingManagement',compact(['data']));
+    }
+    public function deletetraining($id)
+    {
+        $data = Training::find($id);
+        $data->delete();
+        return redirect('company/trainingmanagement');
     }
 }

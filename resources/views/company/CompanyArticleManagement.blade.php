@@ -11,7 +11,6 @@
         <img class="m-3" style="width: 180px;" src="{{ asset('assets/Logo LokerkuID.png') }}" alt="Logo LokerkuID" srcset="">
         <a href="home" class="w3-bar-item w3-button">Home</a>
         <a href="recruitment" class="w3-bar-item w3-button">Recruitment</a>
-        <a href="reviewapplicants" class="w3-bar-item w3-button">Review Applicants</a>
         <a href="training" class="w3-bar-item w3-button">Training</a>
         <a href="trainingmanagement" class="w3-bar-item w3-button">Training Management</a>
         <a href="history" class="w3-bar-item w3-button">History</a>
@@ -39,36 +38,43 @@
     <!-- Page Content -->
     <div style="margin-left:15%">
         <div class="w3-container w3-gray">
-            <h3 class="text-light m-3">Recruitment | {{ Auth::user()->name }}</h3>
+            <h3 class="text-light m-3">Article Management | {{ Auth::user()->name }}</h3>
         </div>
-        <div class="w3-container">
-            <form action="training/store" method="post">
-                @csrf
-                <h3 class="text-center fw-semibold mt-3">Training</h3>
-                <div class="container w-50">
-                    <div class="mb-3 mt-3">
-                        <h6 class="text-start">Training Name</h6>
-                        <input name="trainer" class="form-control" type="text" value="{{ Auth::user()->name }}" hidden>
-                        <input name="trainingname" class="form-control" type="text" placeholder="Training Name">
-                    </div>
-                    <div class="mb-3 mt-3">
-                        <h6 class="text-start">Training Link</h6>
-                        <input name="link" class="form-control" type="text" placeholder="Training Link">
-                    </div>
+        <div class="container-75 m-5">
+            <h3 class="fw-semibold">Your Article</h3>
+            <div class="container border border-2 rounded-4">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Create At</th>
+                        <th scope="col">Update At</th>
+                        <th scope="col">Action</th>
 
-                    <div class="mb-3 mt-3">
-                        <h6 class="text-start">Description</h6>
-                            <div class="">
-                                <textarea id="desc" type="textarea" class="form-control" name="description" value="" placeholder="Training Description"></textarea>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    @foreach ($data as $d)
+                    <tr>
+                        <td>{{ $d->title}}</td>
+                        <td>{{ $d->created_at }}</td>
+                        <td>{{ $d->updated_at}}</td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                <form action="/company/articlemanagement/{{ $d->id }}" method="post">
+                                    @csrf
+                                    @method('delete')
+                                    <input class="btn btn-danger rounded-0" type="submit" value="Delete">
+                                </form>
                             </div>
-                          </select>
-                    </div>
-                    <input class="btn btn-primary" type="submit" name="save" value="Publish Training">
-                </div>
-            </form>
-        </div>
 
-    </div>
+                        </td>
+                    </tr>
+                     @endforeach
+                    </tbody>
+                  </table>
+            </div>
+        </div>
 
 </body>
 </html>
