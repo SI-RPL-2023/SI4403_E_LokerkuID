@@ -58,4 +58,10 @@ class AdminController extends Controller
         return view('admin.AdminArticleManagement',compact(['data','data2']));
 >>>>>>> origin/sule
     }
+    public function deletepost($id)
+    {
+        $data =Article::find($id);
+        $data->destroy($id);
+        return redirect('admin/articlemanagement');
+    }
 }

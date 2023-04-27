@@ -37,7 +37,11 @@ Route::prefix('admin')->middleware('auth','isAdmin')->group(function(){
     Route::get('/article', [AdminController::class, 'article'] );
     Route::post('/store', [AdminController::class, 'store'] );
     Route::get('/articlemanagement', [AdminController::class, 'articlemanagement']);
+<<<<<<< HEAD
 >>>>>>> origin/sule
+=======
+    Route::delete('articlemanagement/{id}', [AdminController::class,'deletepost']);
+>>>>>>> sule
 
 });
 
