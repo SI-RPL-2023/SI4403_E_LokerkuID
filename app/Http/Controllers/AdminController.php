@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\JobRecruitment;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -18,5 +19,16 @@ class AdminController extends Controller
         $data =User::find($id);
         $data->delete();
         return redirect('/admin');
+    }
+    public function jobmanagement()
+    {
+        $data =JobRecruitment::all();
+        return view('admin.AdminJobManagement',compact('data'));
+    }
+    public function deletejob($id)
+    {
+        $data =Jobrecruitment::find($id);
+        $data->delete();
+        return redirect('admin/jobmanagement');
     }
 }

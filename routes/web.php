@@ -29,6 +29,8 @@ Route::get('company/companyregistration', function () {
 Route::prefix('admin')->middleware('auth','isAdmin')->group(function(){
     Route::get('/', [AdminController::class, 'UserManagement'] );
     Route::delete('/{id}', [AdminController::class,'delete']);
+    Route::get('/jobmanagement', [AdminController::class, 'jobmanagement'] );
+    Route::delete('jobmanagement/{id}', [AdminController::class,'deletejob']);
 
 });
 
