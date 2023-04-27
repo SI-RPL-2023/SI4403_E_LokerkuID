@@ -42,7 +42,7 @@
             <h3 class="text-light m-3">Recruitment | {{ Auth::user()->name }}</h3>
         </div>
         <div class="w3-container">
-            <form action="/company/training/store" method="post">
+            <form action="training/store" method="post">
                 @csrf
                 <h3 class="text-center fw-semibold mt-3">Training</h3>
                 <div class="container w-50">

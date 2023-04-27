@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ApplyJob;
 use App\Models\JobRecruitment;
+use App\Models\Training;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -70,5 +71,15 @@ class UserController extends Controller
         }
         $storedata->save();
         return redirect('/findjob')->with('success', 'Your application has been submitted!');;
+    }
+    public function training(Request $request)
+    {
+        $data = Training::where('trainingname','LIKE','%'.$request->search.'%')->get();
+        return view('user.UserTraining',compact(['data']));
+    }
+    public function detailtraining($id)
+    {
+        $data = Training::find($id);
+        return view('user.UserDetailTraining', compact(['data']));
     }
 }
