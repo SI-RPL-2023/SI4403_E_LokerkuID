@@ -41,6 +41,11 @@ class CompanyController extends Controller
     {
         $data = Article::create($request->except(['_token','save']));
         // dd($data);
-        return redirect('company.CompanyArticle');
+        return redirect('company.CompanyArticleManagement');
+    }
+    public function articlemanagement()
+    {
+        $data = Article::all()->where('publisher','=',Auth::user()->name);
+        return view('company.CompanyArticleManagement',compact(['data']));
     }
 }
