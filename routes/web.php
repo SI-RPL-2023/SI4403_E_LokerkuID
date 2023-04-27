@@ -39,6 +39,7 @@ Route::prefix('company')->middleware('auth','isCom')->group(function(){
     Route::get('/article', [CompanyController::class, 'WriteArticle']);
     Route::post('article/post', [CompanyController::class, 'PostArticle']);
     Route::get('articlemanagement', [CompanyController::class,'articlemanagement']);
+    Route::delete('articlemanagement/{id}', [CompanyController::class,'deletearticle']);
 
     Route::get('/training', function() {
         return view('company.CompanyTraining');

@@ -48,4 +48,10 @@ class CompanyController extends Controller
         $data = Article::all()->where('publisher','=',Auth::user()->name);
         return view('company.CompanyArticleManagement',compact(['data']));
     }
+    public function deletearticle($id)
+    {
+        $data = Article::find($id);
+        $data->delete();
+        return redirect('company/articlemanagement');
+    }
 }
