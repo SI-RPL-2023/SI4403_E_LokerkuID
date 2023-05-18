@@ -51,16 +51,6 @@
                       </tr>
                     </thead>
                     <tbody>
-<<<<<<< HEAD
-                    <tr>
-                        <td>Achmad Rozan</td>
-                        <td>achmadrozan123@gmail.com</td>
-                        <td>2</td>
-                        <td>2023-01-09 01:15:50</td>
-                        <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt, perspiciatis!</td>
-                        <td>
-                            <form action="" method="post">
-=======
                     @foreach ($data as $d)
                     <tr>
                         <td>{{ $d->name }}</td>
@@ -72,16 +62,11 @@
                             <form action="/admin/{{ $d->id }}" method="post">
                                 @csrf
                                 @method('delete')
->>>>>>> origin/sule
                                 <input class="btn btn-danger" type="submit" value="Delete">
                             </form>
                         </td>
                     </tr>
-<<<<<<< HEAD
-
-=======
                      @endforeach
->>>>>>> origin/sule
                     </tbody>
                   </table>
             </div>
@@ -102,17 +87,6 @@
                       </tr>
                     </thead>
                     <tbody>
-<<<<<<< HEAD
-
-                    <tr>
-                        <td>LokerkuID</td>
-                        <td>lokerkuID@lokerku.id</td>
-                        <td>1</td>
-                        <td>2023-01-09 02:49:05</td>
-                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint corrupti perferendis beatae! Consequuntur, recusandae officia.</td>
-                        <td>
-                            <form action="" method="post">
-=======
                     @foreach ($com as $c)
                     <tr>
                         <td>{{ $c->name }}</td>
@@ -124,16 +98,11 @@
                             <form action="admin/{{ $c->id }}" method="post">
                                 @csrf
                                 @method('delete')
->>>>>>> origin/sule
                                 <input class="btn btn-danger" type="submit" value="Delete">
                             </form>
                         </td>
                     </tr>
-<<<<<<< HEAD
-
-=======
                      @endforeach
->>>>>>> origin/sule
                     </tbody>
                   </table>
             </div>

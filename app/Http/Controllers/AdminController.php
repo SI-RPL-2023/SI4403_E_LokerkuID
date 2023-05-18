@@ -2,15 +2,6 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< HEAD
-use Illuminate\Http\Request;
-
-class AdminController extends Controller
-{
-    public function AdminManagement()
-    {
-        return view('admin.AdminIndex');
-=======
 use App\Models\Article;
 use App\Models\JobRecruitment;
 use App\Models\User;
@@ -56,7 +47,6 @@ class AdminController extends Controller
         $data = Article::all()->where('publisher','=',Auth::user()->name);
         $data2 = Article::all();
         return view('admin.AdminArticleManagement',compact(['data','data2']));
->>>>>>> origin/sule
     }
     public function deletepost($id)
     {

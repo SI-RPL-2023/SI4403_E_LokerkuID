@@ -27,9 +27,6 @@ Route::get('company/companyregistration', function () {
 });
 
 Route::prefix('admin')->middleware('auth','isAdmin')->group(function(){
-<<<<<<< HEAD
-    Route::get('/', [AdminController::class, 'AdminManagement'] );
-=======
     Route::get('/', [AdminController::class, 'UserManagement'] );
     Route::delete('/{id}', [AdminController::class,'delete']);
     Route::get('/jobmanagement', [AdminController::class, 'jobmanagement'] );
@@ -37,12 +34,7 @@ Route::prefix('admin')->middleware('auth','isAdmin')->group(function(){
     Route::get('/article', [AdminController::class, 'article'] );
     Route::post('/store', [AdminController::class, 'store'] );
     Route::get('/articlemanagement', [AdminController::class, 'articlemanagement']);
-<<<<<<< HEAD
->>>>>>> origin/sule
-=======
     Route::delete('articlemanagement/{id}', [AdminController::class,'deletepost']);
->>>>>>> sule
-
 });
 
 Route::prefix('company')->middleware('auth','isCom')->group(function(){
@@ -51,16 +43,8 @@ Route::prefix('company')->middleware('auth','isCom')->group(function(){
     Route::get('/reviewapplicants', [CompanyController::class, 'ReviewApplicants']);
     Route::post('/storedata', [CompanyController::class, 'StoreData']);
     Route::get('/article', [CompanyController::class, 'WriteArticle']);
-<<<<<<< HEAD
-<<<<<<< HEAD
     Route::get('/articlemanagement', [CompanyController::class,'articlemanagement']);
     Route::delete('articlemanagement/{id}', [CompanyController::class,'deletearticle']);
-=======
->>>>>>> origin/Rafie
-=======
-    Route::get('/articlemanagement', [CompanyController::class,'articlemanagement']);
-    Route::delete('articlemanagement/{id}', [CompanyController::class,'deletearticle']);
->>>>>>> origin/sule
     Route::post('article/post', [CompanyController::class, 'PostArticle']);
     Route::get('{id}/edit', [CompanyController::class,'edit']);
     Route::put('/{id}/update', [CompanyController::class,'update']);
@@ -85,13 +69,7 @@ Route::get('/findjob', [UserController::class, 'findjob']);
 Route::get('/', [UserController::class, 'show']);
 Route::get('/jobdetail/{id}', [UserController::class, 'jobdetail']);
 Route::get('/training', [UserController::class, 'training']);
-<<<<<<< HEAD
-<<<<<<< HEAD
 Route::get('/detailtraining/{id}', [UserController::class, 'detailtraining']);
-=======
->>>>>>> origin/Rafie
-=======
->>>>>>> origin/sule
 
 Route::get('jobdetail/applyjob/{id}', [UserController::class, 'applyjob'])->middleware(['auth'])->name('user.UserApplicant');
 Route::post('jobdetail/applyjob/storedata', [UserController::class, 'StoreData']);
