@@ -54,6 +54,9 @@ Route::prefix('company')->middleware('auth','isCom')->group(function(){
     Route::post('/training/store', [CompanyController::class,'StoreTraining']);
     Route::get('/trainingmanagement', [CompanyController::class,'trainingmanagement']);
     Route::delete('/trainingmanagement/{id}', [CompanyController::class,'deletetraining']);
+    Route::get('/profile', [CompanyController::class,'profile']);
+    Route::get('/editcomprofile', [CompanyController::class,'editprofile']);
+    Route::put('editprofile/{id}/edit', [CompanyController::class,'updateprofile']);
 
 });
 

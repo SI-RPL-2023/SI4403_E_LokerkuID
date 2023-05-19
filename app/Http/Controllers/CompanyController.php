@@ -6,6 +6,7 @@ use App\Models\ApplyJob;
 use App\Models\Article;
 use App\Models\JobRecruitment;
 use App\Models\Training;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -99,5 +100,19 @@ class CompanyController extends Controller
         $data = Training::find($id);
         $data->delete();
         return redirect('company/trainingmanagement');
+    }
+    public function profile()
+    {
+        return view('company.CompanyProfile');
+    }
+    public function editprofile()
+    {
+        return view('company.CompanyEditProfile');
+    }
+    public function updateprofile($id, Request $request)
+    {
+        $data =User::find($id);
+        $data->update($request->except(['_method','_token','submit']));
+        return redirect('company/profile');
     }
 }
