@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ApplyJob;
+use App\Models\Article;
 use App\Models\JobRecruitment;
 use App\Models\Training;
 use Illuminate\Http\Request;
@@ -82,4 +83,19 @@ class UserController extends Controller
         $data = Training::find($id);
         return view('user.UserDetailTraining', compact(['data']));
     }
+    public function article(Request $request)
+    {
+        $article = Article::where('title','LIKE','%'.$request->search.'%')->get();
+        return view('user.UserArticle',compact(['article']));
+    }
+    public function readarticle($id)
+    {
+        $data = Article::find($id);
+        return view('user.UserReadArticle',compact(['data']));
+    }
+    public function AboutUs()
+    {
+        return view('user.UserAboutUs');
+    }
+
 }
