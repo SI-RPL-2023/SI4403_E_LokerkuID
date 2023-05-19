@@ -82,7 +82,6 @@
                         <a href='' style='text-decoration:none;'>Penjualan / Pemasaran</a><br>
                         <a href='' style='text-decoration:none;'>Programmer</a><br>
                         <a href='' style='text-decoration:none;'>Research & Development</a><br>
-                        <a href='' style='text-decoration:none;'>Teknik</a><br>
                       </div>
                     </div>
                 </center>
