@@ -18,13 +18,16 @@
         </center>
     </div>
     <div class="container">
-@foreach ($data as $d)
-    <div class="container border border-1 rounded-4 w-75 p-3 mt-3 mb-3">
-        <h5 class="fw-semibold">{{ $d->trainingname }}</h5>
-        <h6>From : {{ $d->trainer }}</h6>
-        <p>{{ $d->description }}</p>
-        <a href="/detailtraining/{{ $d->id }}" class="btn btn-primary mt-2">See detail</a>
+        @foreach ($data as $d)
+            <div class="container border border-1 rounded-4 w-75 p-3 mt-3 mb-3">
+                <h5 class="fw-semibold">{{ $d->trainingname }}</h5>
+                <h6>From : {{ $d->trainer }}</h6>
+                <p>{{ $d->description }}</p>
+                <form action="/detailtraining/{{ $d->id }}" method="get">
+                    @csrf
+                    <button class="btn btn-primary" type="submit">See Detail</button>
+                </form>
+            </div>
+        @endforeach
     </div>
-    </div>
-@endforeach
 @endsection

@@ -51,19 +51,22 @@
                       </tr>
                     </thead>
                     <tbody>
+                    @foreach ($data as $d)
                     <tr>
-                        <td>Achmad Rozan</td>
-                        <td>achmadrozan123@gmail.com</td>
-                        <td>2</td>
-                        <td>2023-01-09 01:15:50</td>
-                        <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt, perspiciatis!</td>
+                        <td>{{ $d->name }}</td>
+                        <td>{{ $d->email}}</td>
+                        <td>{{ $d->level }}</td>
+                        <td>{{ $d->created_at}}</td>
+                        <td>{{ $d->desc }}</td>
                         <td>
-                            <form action="" method="post">
+                            <form action="/admin/{{ $d->id }}" method="post">
+                                @csrf
+                                @method('delete')
                                 <input class="btn btn-danger" type="submit" value="Delete">
                             </form>
                         </td>
                     </tr>
-
+                     @endforeach
                     </tbody>
                   </table>
             </div>
@@ -84,20 +87,22 @@
                       </tr>
                     </thead>
                     <tbody>
-
+                    @foreach ($com as $c)
                     <tr>
-                        <td>LokerkuID</td>
-                        <td>lokerkuID@lokerku.id</td>
-                        <td>1</td>
-                        <td>2023-01-09 02:49:05</td>
-                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint corrupti perferendis beatae! Consequuntur, recusandae officia.</td>
+                        <td>{{ $c->name }}</td>
+                        <td>{{ $c->email}}</td>
+                        <td>{{ $c->level }}</td>
+                        <td>{{ $c->created_at}}</td>
+                        <td>{{ $c->desc }}</td>
                         <td>
-                            <form action="" method="post">
+                            <form action="admin/{{ $c->id }}" method="post">
+                                @csrf
+                                @method('delete')
                                 <input class="btn btn-danger" type="submit" value="Delete">
                             </form>
                         </td>
                     </tr>
-
+                     @endforeach
                     </tbody>
                   </table>
             </div>

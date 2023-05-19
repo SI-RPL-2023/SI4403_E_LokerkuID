@@ -93,4 +93,9 @@ class UserController extends Controller
         $data = Article::find($id);
         return view('user.UserReadArticle',compact(['data']));
     }
+    public function AboutUs()
+    {
+        return view('user.UserAboutUs');
+    }
+
 }

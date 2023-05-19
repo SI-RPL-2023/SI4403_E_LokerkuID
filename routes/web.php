@@ -27,8 +27,14 @@ Route::get('company/companyregistration', function () {
 });
 
 Route::prefix('admin')->middleware('auth','isAdmin')->group(function(){
-    Route::get('/', [AdminController::class, 'AdminManagement'] );
-
+    Route::get('/', [AdminController::class, 'UserManagement'] );
+    Route::delete('/{id}', [AdminController::class,'delete']);
+    Route::get('/jobmanagement', [AdminController::class, 'jobmanagement'] );
+    Route::delete('jobmanagement/{id}', [AdminController::class,'deletejob']);
+    Route::get('/article', [AdminController::class, 'article'] );
+    Route::post('/store', [AdminController::class, 'store'] );
+    Route::get('/articlemanagement', [AdminController::class, 'articlemanagement']);
+    Route::delete('articlemanagement/{id}', [AdminController::class,'deletepost']);
 });
 
 Route::prefix('company')->middleware('auth','isCom')->group(function(){
@@ -66,6 +72,8 @@ Route::get('/training', [UserController::class, 'training']);
 Route::get('/detailtraining/{id}', [UserController::class, 'detailtraining']);
 Route::get('/article', [UserController::class, 'article']);
 Route::get('/readarticle/{id}', [UserController::class, 'readarticle']);
+Route::get('/about', [UserController::class, 'AboutUs']);
+
 
 Route::get('jobdetail/applyjob/{id}', [UserController::class, 'applyjob'])->middleware(['auth'])->name('user.UserApplicant');
 Route::post('jobdetail/applyjob/storedata', [UserController::class, 'StoreData']);

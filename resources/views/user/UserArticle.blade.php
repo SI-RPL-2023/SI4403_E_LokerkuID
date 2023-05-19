@@ -17,7 +17,6 @@
                     </div>
                     </div>
                 </form>
-
             </center>
         </div>
         <div class="container w-75 mb-3">
@@ -35,11 +34,6 @@
               </div>
             </div>
         @endforeach
-
-
-
-
-
         </div>
 
             </center>

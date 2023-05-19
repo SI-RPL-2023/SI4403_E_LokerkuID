@@ -28,7 +28,7 @@ class HomeController extends Controller
             if(Auth::user()->level == 0){
                 return redirect('admin');
             }elseif(Auth::user()->level == 1){
-                return redirect('company/');
+                return redirect('company/home');
             }else{
                 return redirect('/');
             }

@@ -54,6 +54,7 @@ class CompanyController extends Controller
         $data = Article::find($id);
         $data->delete();
         return redirect('company/articlemanagement');
+        return redirect('company.CompanyArticle');
     }
     public function edit($id)
     {
