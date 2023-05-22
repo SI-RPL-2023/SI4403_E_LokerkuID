@@ -60,10 +60,6 @@ Route::prefix('company')->middleware('auth','isCom')->group(function(){
 
 });
 
-// Route::prefix('user')->middleware('auth','isUser')->group(function(){
-
-// });
-
 Auth::routes();
 
 Route::prefix('user')->middleware('auth','isUser')->group(function(){
