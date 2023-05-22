@@ -61,12 +61,18 @@ Route::prefix('company')->middleware('auth','isCom')->group(function(){
 });
 
 // Route::prefix('user')->middleware('auth','isUser')->group(function(){
-//     Route::get('jobdetail/applyjob/{id}', [UserController::class, 'applyjob']);
 
 // });
 
 Auth::routes();
 
+Route::prefix('user')->middleware('auth','isUser')->group(function(){
+    Route::get('/profile', [UserController::class, 'UserProfile']);
+    Route::get('/editprofile', [UserController::class, 'UserEditProfile']);
+    Route::put('/editprofile/{id}/edit', [UserController::class, 'UserUpdateProfile']);
+    Route::get('jobdetail/applyjob/{id}', [UserController::class, 'applyjob']);
+
+});
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/findjob', [UserController::class, 'findjob']);
 Route::get('/', [UserController::class, 'show']);
@@ -76,6 +82,8 @@ Route::get('/detailtraining/{id}', [UserController::class, 'detailtraining']);
 Route::get('/article', [UserController::class, 'article']);
 Route::get('/readarticle/{id}', [UserController::class, 'readarticle']);
 Route::get('/about', [UserController::class, 'AboutUs']);
+
+
 
 
 Route::get('jobdetail/applyjob/{id}', [UserController::class, 'applyjob'])->middleware(['auth'])->name('user.UserApplicant');

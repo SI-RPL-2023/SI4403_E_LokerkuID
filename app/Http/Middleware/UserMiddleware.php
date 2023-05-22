@@ -6,6 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
 class UserMiddleware
 {
     /**
@@ -17,6 +18,10 @@ class UserMiddleware
     {
         if(Auth::check()){
             if(Auth::user()->level == 2){
+                return $next($request);
+            }elseif(Auth::user()->level != 1){
+                return $next($request);
+            }elseif(Auth::user()->level != 0){
                 return $next($request);
             }else{
                 return redirect('/');

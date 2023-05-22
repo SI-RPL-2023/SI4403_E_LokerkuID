@@ -6,6 +6,7 @@ use App\Models\ApplyJob;
 use App\Models\Article;
 use App\Models\JobRecruitment;
 use App\Models\Training;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -96,6 +97,22 @@ class UserController extends Controller
     public function AboutUs()
     {
         return view('user.UserAboutUs');
+    }
+    public function UserProfile()
+    {
+        return view('user.UserProfile');
+    }
+    public function UserEditProfile()
+    {
+        return view('user.UserEditProfile');
+
+    }
+    public function UserUpdateProfile($id, Request $request)
+    {
+        $data =User::find($id);
+        $data->update($request->except(['_method','_token','submit']));
+        // dd($data);
+        return redirect('user/profile');
     }
 
 }
