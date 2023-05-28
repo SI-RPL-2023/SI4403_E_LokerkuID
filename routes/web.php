@@ -57,6 +57,7 @@ Route::prefix('company')->middleware('auth','isCom')->group(function(){
     Route::get('/profile', [CompanyController::class,'profile']);
     Route::get('/editcomprofile', [CompanyController::class,'editprofile']);
     Route::put('editprofile/{id}/edit', [CompanyController::class,'updateprofile']);
+    Route::get('/{id}/DetailApplicant', [CompanyController::class,'DetailApplicant']);
 
 });
 

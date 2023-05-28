@@ -10,14 +10,14 @@
     <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:15%">
         <img class="m-3" style="width: 180px;" src="{{ asset('assets/Logo LokerkuID.png') }}" alt="Logo LokerkuID" srcset="">
         <a href="home" class="w3-bar-item w3-button">Home</a>
-        <a href="company/recruitment" class="w3-bar-item w3-button">Recruitment</a>
-        <a href="company/reviewapplicants" class="w3-bar-item w3-button">Review Applicants</a>
-        <a href="company/training" class="w3-bar-item w3-button">Training</a>
-        <a href="company/trainingmanagement" class="w3-bar-item w3-button">Training Management</a>
-        <a href="company/history" class="w3-bar-item w3-button">History</a>
-        <a href="company/article" class="w3-bar-item w3-button">Write Article</a>
-        <a href="company/articlemanagement" class="w3-bar-item w3-button">Article Management</a>
-        <a href="company/profile" class="w3-bar-item w3-button">Profile</a>
+        <a href="recruitment" class="w3-bar-item w3-button">Recruitment</a>
+        <a href="reviewapplicants" class="w3-bar-item w3-button">Review Applicants</a>
+        <a href="training" class="w3-bar-item w3-button">Training</a>
+        <a href="trainingmanagement" class="w3-bar-item w3-button">Training Management</a>
+        <a href="history" class="w3-bar-item w3-button">History</a>
+        <a href="article" class="w3-bar-item w3-button">Write Article</a>
+        <a href="articlemanagement" class="w3-bar-item w3-button">Article Management</a>
+        <a href="profile" class="w3-bar-item w3-button">Profile</a>
         <div class="w3-dropdown-hover">
             <button class="w3-button">{{ Auth::user()->name }}</button>
             <div class="w3-dropdown-content w3-bar-block w3-border">
@@ -51,6 +51,7 @@
                             <th scope="col">Email</th>
                             <th scope="col">Phone</th>
                             <th scope="col">Address</th>
+                            <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -60,6 +61,10 @@
                             <td>{{ $value->email}}</td>
                             <td>{{ $value->phone}}</td>
                             <td>{{ $value->address}}</td>
+                            <td>
+                                <a href="/company/{{ $value->id }}/DetailApplicant">
+                                    <button type="button" class="btn btn-success rounded-0">View Detail</button></td>
+                                </a>
                         </tr>
                       @endforeach
 

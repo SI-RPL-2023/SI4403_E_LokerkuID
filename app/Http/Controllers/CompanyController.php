@@ -115,4 +115,9 @@ class CompanyController extends Controller
         $data->update($request->except(['_method','_token','submit']));
         return redirect('company/profile');
     }
+    public function DetailApplicant($id)
+    {
+        $data =ApplyJob::find($id);
+        return view('company.CompanyDetailApplicant',compact(['data']));
+    }
 }
