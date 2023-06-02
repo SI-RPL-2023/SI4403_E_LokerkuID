@@ -6,8 +6,11 @@ use App\Models\ApplyJob;
 use App\Models\Article;
 use App\Models\JobRecruitment;
 use App\Models\Training;
+use App\Models\TrainingParticipant;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class UserController extends Controller
 {
@@ -72,7 +75,7 @@ class UserController extends Controller
             $storedata->resume = $filename;
         }
         $storedata->save();
-        return redirect('/findjob')->with('success', 'Your application has been submitted!');;
+        return redirect('/findjob')->with('success', 'Your application has been submitted!');
     }
     public function training(Request $request)
     {
@@ -83,6 +86,21 @@ class UserController extends Controller
     {
         $data = Training::find($id);
         return view('user.UserDetailTraining', compact(['data']));
+    }
+    public function detailtrainingapply($id, Request $request)
+    {
+        $data = Training::find($id);
+        // $applicant = Auth::user()->name);
+        $data1 =TrainingParticipant::create(
+            [
+                "trainer" => $data['trainer'],
+                "trainingname" => $data['trainingname'],
+                "applicant" => Auth::user()->name,
+                "email" => Auth::user()->email,
+                "phone" => Auth::user()->phone_number,
+            ]
+        );
+        return redirect('training');
     }
     public function article(Request $request)
     {

@@ -6,7 +6,9 @@ use App\Models\ApplyJob;
 use App\Models\Article;
 use App\Models\JobRecruitment;
 use App\Models\Training;
+use App\Models\TrainingParticipant;
 use App\Models\User;
+use Dflydev\DotAccessData\Data;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -120,4 +122,31 @@ class CompanyController extends Controller
         $data =ApplyJob::find($id);
         return view('company.CompanyDetailApplicant',compact(['data']));
     }
+    public function viewtraining($id)
+    {
+        $data = Training::find($id);
+        $dat = $data['trainingname'];
+        $data1 = TrainingParticipant::all()->where('trainer','=',Auth::user()->name)->where("trainingname", '=', $dat);
+        return view('company.CompanyViewTraining', compact(['data1','data']));
+    }
+    public function certificate($id)
+    {
+        $data = TrainingParticipant::find($id);
+        return view('company.CompanyCertification', compact(['data']));
+    }
+    public function postcertificate($id, Request $request)
+    {
+
+    $storedata = TrainingParticipant::find($id);
+    $storedata->certificate = $request->certificate;
+
+    if ($request->hasFile('certificate')) {
+        $file = $request->file('certificate');
+        $filename = time() . '_' . $file->getClientOriginalName();
+        $file->store(public_path('certificates'), $filename);
+        $storedata->certificate = $filename; // Update the certificate field, not the resume field
+    }
+    $storedata->save();
+    return redirect("company/trainingmanagement");
+}
 }

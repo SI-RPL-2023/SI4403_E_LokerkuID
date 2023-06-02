@@ -42,7 +42,7 @@
             <h3 class="text-light m-3">Home | {{ Auth::user()->name }}</h3>
         </div>
         <div class="container-75 m-5">
-            <h3 class="fw-semibold">Ongoing Recruitment</h3>
+            <h3 class="fw-semibold">Ongoing Training</h3>
             <div class="container border border-2 rounded-4">
                 <table class="table">
                     <thead>
@@ -63,8 +63,8 @@
                         <td>{{ $d->created_at }}</td>
                         <td>
                             <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                                <a href="/company/trainingmanagement/{{ $d->id }}/edit">
-                                    <button type="button" class="btn btn-warning rounded-0">Update</button>
+                                <a href="/company/{{ $d->id }}/viewtraining">
+                                    <button type="button" class="btn btn-success rounded-0">View</button>
                                 </a>
                             <form action="/company/trainingmanagement/{{ $d->id }}" method="POST">
                                 @csrf

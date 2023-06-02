@@ -58,6 +58,9 @@ Route::prefix('company')->middleware('auth','isCom')->group(function(){
     Route::get('/editcomprofile', [CompanyController::class,'editprofile']);
     Route::put('editprofile/{id}/edit', [CompanyController::class,'updateprofile']);
     Route::get('/{id}/DetailApplicant', [CompanyController::class,'DetailApplicant']);
+    Route::get('/{id}/viewtraining', [CompanyController::class,'ViewTraining']);
+    Route::get('/{id}/certificate', [CompanyController::class,'certificate']);
+    Route::put('/{id}/postcertificate', [CompanyController::class,'postcertificate']);
 
 });
 
@@ -68,14 +71,15 @@ Route::prefix('user')->middleware('auth','isUser')->group(function(){
     Route::get('/editprofile', [UserController::class, 'UserEditProfile']);
     Route::put('/editprofile/{id}/edit', [UserController::class, 'UserUpdateProfile']);
     Route::get('jobdetail/applyjob/{id}', [UserController::class, 'applyjob']);
+    Route::post('/detailtraining/{id}/apply', [UserController::class, 'detailtrainingapply']);
 
 });
+Route::get('/detailtraining/{id}', [UserController::class, 'detailtraining']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/findjob', [UserController::class, 'findjob']);
 Route::get('/', [UserController::class, 'show']);
 Route::get('/jobdetail/{id}', [UserController::class, 'jobdetail']);
 Route::get('/training', [UserController::class, 'training']);
-Route::get('/detailtraining/{id}', [UserController::class, 'detailtraining']);
 Route::get('/article', [UserController::class, 'article']);
 Route::get('/readarticle/{id}', [UserController::class, 'readarticle']);
 Route::get('/about', [UserController::class, 'AboutUs']);
