@@ -5,7 +5,7 @@
         <div class="row">
           <div class="col">
             <div style="height: 330px;" class="card-body text-center mt-5 border border-1 rounded-2 mb-5">
-                <h5 class="card-title fw-semibold mt-3">{{ $data->jobname }}</h5>
+                <h5 class="card-title fw-semibold mt-1">{{ $data->jobname }}</h5>
                 <h6>{{ $data->recruiter }}</h6>
                 <div class="container text-start mx-5 mt-3">
                 <img style="height:20px; padding-right:10px;" src="{{ asset('assets/pin.png') }}" alt="">Location : {{ $data->city }}<br>
@@ -16,7 +16,7 @@
                 <p>{{ $data->desc }}</p>
                 </div>
                 <a href="applyjob/{{ $data->id }}">
-                    <button class="btn btn-primary mb-3">Apply Job</button>
+                    <button class="btn btn-primary mb-4">Apply Job</button>
                 </a>
               </div>
           </div>
