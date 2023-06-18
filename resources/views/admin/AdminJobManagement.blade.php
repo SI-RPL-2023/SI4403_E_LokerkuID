@@ -63,6 +63,7 @@
                         <td>{{ $d->salary}}</td>
                         <td>{{ $d->type}}</td>
                         <td>{{ $d->experience}}</td>
+                        <td>{{ $d->remoteworking}}</td>
                         <td>{{ $d->desc}}</td>
                         <td>{{ $d->status}}</td>
                         <td>

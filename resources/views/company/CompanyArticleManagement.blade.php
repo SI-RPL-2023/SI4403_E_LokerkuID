@@ -11,6 +11,7 @@
         <img class="m-3" style="width: 180px;" src="{{ asset('assets/Logo LokerkuID.png') }}" alt="Logo LokerkuID" srcset="">
         <a href="home" class="w3-bar-item w3-button">Home</a>
         <a href="recruitment" class="w3-bar-item w3-button">Recruitment</a>
+        <a href="reviewapplicants" class="w3-bar-item w3-button">Review Applicants</a>
         <a href="training" class="w3-bar-item w3-button">Training</a>
         <a href="trainingmanagement" class="w3-bar-item w3-button">Training Management</a>
         <a href="history" class="w3-bar-item w3-button">History</a>

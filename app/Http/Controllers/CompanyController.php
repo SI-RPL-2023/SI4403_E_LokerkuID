@@ -75,6 +75,7 @@ class CompanyController extends Controller
     {
         $data =Jobrecruitment::find($id);
         $data->update($request->except(['_token','_method','_method','jobname','city','salary','type','remoteworking','desc','submit']));
+        // dd($request);
         return redirect('company/home');
     }
     public function delete($id)
@@ -122,6 +123,12 @@ class CompanyController extends Controller
         $data =ApplyJob::find($id);
         return view('company.CompanyDetailApplicant',compact(['data']));
     }
+    public function AccApplicant($id, Request $request)
+    {
+        $data = ApplyJob::find($id);
+        $data->update($request->except('_method','_token','submit'));
+        return view("company.CompanyInterview");
+    }
     public function viewtraining($id)
     {
         $data = Training::find($id);
@@ -148,5 +155,21 @@ class CompanyController extends Controller
     }
     $storedata->save();
     return redirect("company/trainingmanagement");
-}
+    }
+    function history() {
+        $data = JobRecruitment::all()
+        ->where('recruiter','=',Auth::user()->name)
+        ->where('status','=','close');
+        // dd($data);
+        return view('company.CompanyHistory', compact(['data']));
+    }
+    function interview(Request $request, $id)
+    {
+        $date = $request['schedule'];
+        $data = ApplyJob::find($id);
+        $data->interviewdate = $date;
+        $data->save();
+        return redirect('company/reviewapplicants');
+        // dd($date);
+    }
 }

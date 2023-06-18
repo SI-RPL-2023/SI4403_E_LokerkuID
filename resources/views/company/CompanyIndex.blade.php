@@ -70,7 +70,7 @@
                             <td>
                                 <div class="btn-group" role="group" aria-label="Basic mixed styles example">
                                     <form action="/company/{{ $value->id }}" method="post">
-                                        @method('put')
+                                        {{-- @method('put') --}}
                                             @csrf
                                                     <input name="recruiter" class="form-control" type="text" value="{{ Auth::user()->name }}" hidden>
                                                     <input name="status" class="form-control" type="text" value="close" hidden>

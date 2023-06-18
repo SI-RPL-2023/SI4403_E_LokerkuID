@@ -60,6 +60,7 @@ class UserController extends Controller
     {
         $storedata = new ApplyJob;
         $storedata->fullname = $request->fullname;
+        $storedata->name = $request->name;
         $storedata->email = $request->email;
         $storedata->phone = $request->phone;
         $storedata->address = $request->address;
@@ -131,6 +132,17 @@ class UserController extends Controller
         $data->update($request->except(['_method','_token','submit']));
         // dd($data);
         return redirect('user/profile');
+    }
+    public function jobapplied()
+    {
+        $data = ApplyJob::all()->where('name','=', Auth::user()->name);
+        return view('user.UserJobApplied',compact(['data']));
+    }
+    function certificate()
+    {
+        $data = TrainingParticipant::all()
+        ->where('applicant', '=', Auth::user()->name);
+        return view('user.UserCertificate', compact(['data']));
     }
 
 }

@@ -39,34 +39,41 @@
     <!-- Page Content -->
     <div style="margin-left:15%">
         <div class="w3-container w3-gray">
-            <h3 class="text-light m-3">Review Applicant | {{ Auth::user()->name }}</h3>
+            <h3 class="text-light m-3">Home | {{ Auth::user()->name }}</h3>
         </div>
         <div class="container-75 m-5">
-            <h3 class="fw-semibold">Ongoing Recruitment</h3>
+            <h3 class="fw-semibold">Closed Recruitment</h3>
             <div class="container border border-2 rounded-4">
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">Full Name</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Phone</th>
-                            <th scope="col">Address</th>
-                            <th scope="col">Status</th>
+                            <th scope="col">Job Position</th>
+                            <th scope="col">City</th>
+                            <th scope="col">Salary</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Experience</th>
+                            <th scope="col">Remote Working</th>
+                            <th scope="col">Description</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($data as $value)
                         <tr>
-                            <td>{{ $value->fullname }}</td>
-                            <td>{{ $value->email}}</td>
-                            <td>{{ $value->phone}}</td>
-                            <td>{{ $value->address}}</td>
-                            <td>{{ $value->status}}</td>
+                            <td>{{ $value->jobname }}</td>
+                            <td>{{ $value->city}}</td>
+                            <td>{{ $value->salary }}</td>
+                            <td>{{ $value->type }}</td>
+                            <td>{{ $value->experience }}</td>
+                            <td>{{ $value->remoteworking }}</td>
+                            <td>{{ $value->desc }}</td>
                             <td>
-                                <a href="/company/{{ $value->id }}/DetailApplicant">
-                                    <button type="button" class="btn btn-success rounded-0">View Detail</button></td>
-                                </a>
+                                <form action="/company/{{ $value->id }}" method="post">
+                                    @csrf
+                                    <input type="text" name="status" value="ongoing" hidden>
+                                    <button type="submit" class="btn btn-success">Reactive</button>
+                                </form>
+                            </td>
                         </tr>
                       @endforeach
 

@@ -43,12 +43,13 @@ Route::prefix('company')->middleware('auth','isCom')->group(function(){
     Route::get('/reviewapplicants', [CompanyController::class, 'ReviewApplicants']);
     Route::post('/storedata', [CompanyController::class, 'StoreData']);
     Route::get('/article', [CompanyController::class, 'WriteArticle']);
+    Route::get('/history', [CompanyController::class, 'history']);
     Route::get('/articlemanagement', [CompanyController::class,'articlemanagement']);
     Route::delete('articlemanagement/{id}', [CompanyController::class,'deletearticle']);
     Route::post('article/post', [CompanyController::class, 'PostArticle']);
     Route::get('{id}/edit', [CompanyController::class,'edit']);
     Route::put('/{id}/update', [CompanyController::class,'update']);
-    Route::put('/{id}', [CompanyController::class,'close']);
+    Route::post('/{id}', [CompanyController::class,'close']);
     Route::delete('/{id}', [CompanyController::class,'delete']);
     Route::get('/training', [CompanyController::class, 'training']);
     Route::post('/training/store', [CompanyController::class,'StoreTraining']);
@@ -58,9 +59,11 @@ Route::prefix('company')->middleware('auth','isCom')->group(function(){
     Route::get('/editcomprofile', [CompanyController::class,'editprofile']);
     Route::put('editprofile/{id}/edit', [CompanyController::class,'updateprofile']);
     Route::get('/{id}/DetailApplicant', [CompanyController::class,'DetailApplicant']);
+    Route::put('/{id}/acc', [CompanyController::class,'AccApplicant']);
     Route::get('/{id}/viewtraining', [CompanyController::class,'ViewTraining']);
     Route::get('/{id}/certificate', [CompanyController::class,'certificate']);
     Route::put('/{id}/postcertificate', [CompanyController::class,'postcertificate']);
+    Route::post('/{id}/interview', [CompanyController::class,'interview']);
 
 });
 
@@ -72,6 +75,8 @@ Route::prefix('user')->middleware('auth','isUser')->group(function(){
     Route::put('/editprofile/{id}/edit', [UserController::class, 'UserUpdateProfile']);
     Route::get('jobdetail/applyjob/{id}', [UserController::class, 'applyjob']);
     Route::post('/detailtraining/{id}/apply', [UserController::class, 'detailtrainingapply']);
+    Route::get('/jobapplied', [UserController::class, 'jobapplied']);
+    Route::get('/certificate', [UserController::class, 'certificate']);
 
 });
 Route::get('/detailtraining/{id}', [UserController::class, 'detailtraining']);

@@ -1,7 +1,7 @@
 @extends('user.navbarfooter')
 @section('body')
 <div class="container w-75">
-
+    <center><h2 class="mt-4">Join Training</h2></center>
     <div class="container border border-1 rounded-4 w-75 p-3 mt-3 mb-3">
         <h5 class="fw-semibold">{{ $data->trainingname }}</h5>
         <h6>From : {{ $data->trainer }}</h6>
@@ -15,6 +15,15 @@
             <button  class="btn btn-primary mt-2" name="submit" type="submit">Join Training</button>
         </form>
     </div>
-
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 @endsection

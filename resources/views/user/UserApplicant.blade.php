@@ -8,6 +8,9 @@
                 <form action="storedata" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group mt-3">
+                        <input type="text" class="form-control" id="name" name="name" value="{{ Auth::user()->name }}" required hidden>
+                    </div>
+                    <div class="form-group mt-3">
                         <label for="fullname">Nama Lengkap</label>
                         <input type="text" class="form-control" id="fullname" name="fullname" required>
                     </div>
